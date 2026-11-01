@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NearOffer — Faisalabad Offers, Wedding Halls, Local Shops</title>
+<meta name="description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus masjid details and practical city guides.">
+<meta name="keywords" content="Faisalabad offers, Faisalabad dukaan offers, kapra wholesale Faisalabad, motor market Faisalabad, mobile price Faisalabad, electronics offers Faisalabad, shoes wholesale Faisalabad, furniture sale Faisalabad, grocery offers Faisalabad, medical wholesale Faisalabad, verified dukaan, wholesale market Faisalabad, near offers, dukan offers, Faisalabad shopping offers, Ghanta Ghar bazaar offers, Katchery bazaar offers, wedding halls Faisalabad, marquee booking Faisalabad, masjids in Faisalabad, Faisalabad areas">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:#f7f5f0;color:#222;line-height:1.6}
+  .wrap{max-width:960px;margin:0 auto;padding:0 18px}
+  header{background:#0d5c46;color:#fff;padding:12px 0 0;position:sticky;top:0;z-index:10}
+  header .top{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-size:28px;font-weight:800;letter-spacing:.3px}
+  .logo span{color:#ffb703}
+  .city-badge{background:#ffb703;color:#222;font-weight:700;font-size:13px;padding:5px 12px;border-radius:20px}
+  .hero{background:linear-gradient(135deg,#0d5c46,#12805f);color:#fff;padding:44px 0 40px;text-align:center}
+  .hero h1{font-size:36px;line-height:1.25;margin-bottom:12px}
+  .hero h1 span{color:#ffb703}
+  .hero p{font-size:18px;opacity:.95;max-width:640px;margin:0 auto 22px}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:700;text-decoration:none;font-size:16px}
+  .btn-amber{background:#ffb703;color:#222}
+  .btn-outline{border:2px solid #fff;color:#fff}
+  .btn-green{background:#0d5c46;color:#fff}
+  .trust{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;font-size:14px}
+  .trust span{background:rgba(255,255,255,.15);padding:6px 13px;border-radius:20px}
+  section{padding:34px 0}
+  h2{font-size:25px;margin-bottom:6px;color:#0d5c46}
+  .sub{color:#555;margin-bottom:20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+  .card{background:#fff;border:1px solid #e5e0d5;border-radius:14px;padding:18px}
+  .card b{font-size:17px}
+  .card p{color:#555;font-size:14px;margin-top:4px}
+  .card .links{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .card .links a{font-size:13px;font-weight:700;text-decoration:none;padding:6px 11px;border-radius:20px}
+  .card .links a.view{background:#e8f3ee;color:#0d5c46}
+  .card .links a.shop{background:#fff3d6;color:#7a5b00}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .step{background:#fff;border:1px solid #e5e0d5;border-radius:14px;padding:18px}
+  .step .n{font-size:26px;font-weight:800;color:#ffb703}
+  .wholesale{background:#fff7e0;border:2px solid #ffb703;border-radius:16px;padding:24px}
+  .wholesale h2{color:#7a5b00}
+  .portal{background:#fff;border:2px solid #0d5c46;border-radius:16px;padding:24px}
+  .portal h2{color:#0d5c46}
+  form label{display:block;font-weight:600;margin:12px 0 4px;font-size:14px}
+  form input,form select{width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;font-size:15px}
+  form button{margin-top:16px;border:0;cursor:pointer}
+  .note{font-size:13px;color:#666;margin-top:10px}
+  .infobox{background:#eef6f1;border:1px solid #bcd8c8;border-radius:12px;padding:16px;margin-top:18px}
+  .infobox h3{font-size:17px;color:#0d5c46;margin-bottom:6px}
+  .infobox ol{margin-left:20px}
+  .infobox li{margin-bottom:6px}
+  .chatbox{border:2px solid #0d5c46;border-radius:14px;overflow:hidden;margin-top:18px}
+  .chatbox .chead{background:#0d5c46;color:#fff;padding:11px 16px;font-weight:700}
+  .chatbox .cbody{padding:16px;background:#faf8f3;min-height:90px}
+  .chatbox .cfoot{display:flex;gap:8px;padding:12px;background:#fff;border-top:1px solid #e5e0d5}
+  .chatbox .cfoot input{flex:1;padding:11px;border:1px solid #ccc;border-radius:8px;font-size:15px}
+  .chatbox .cfoot button{background:#0d5c46;color:#fff;border:0;border-radius:8px;padding:11px 18px;font-weight:700;cursor:pointer}
+  .areachips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .areachips span{background:#fff;border:1px solid #e5e0d5;padding:6px 12px;border-radius:20px;font-size:13px}
+  .shopbox{background:#0d5c46;color:#fff;border-radius:16px;padding:28px;text-align:center}
+  .shopbox h2{color:#fff}
+  .shopbox p{opacity:.95;margin:8px 0 18px}
+  .cities{display:flex;gap:10px;flex-wrap:wrap}
+  .cities span{background:#fff;border:1px solid #e5e0d5;padding:8px 14px;border-radius:20px;font-size:14px}
+  .cities span.soon{color:#777}
+  footer{background:#222;color:#bbb;text-align:center;padding:22px 0;font-size:14px}
+  footer a{color:#ffb703;text-decoration:none}
+  @media(max-width:600px){.hero{padding:28px 0 24px}.hero h1{font-size:28px}.hero p{font-size:16px}header.mini .top{display:none}header.mini{padding-top:4px}}
+  #cat-grid .card{cursor:pointer;text-align:center;padding:22px 10px}
+  #cat-grid .card b{font-size:17px}
+  #cat-grid .card p,#cat-grid .card .links{display:none}
+  .cat-detail{background:#fff;border:2px solid #0d5c46;border-radius:16px;padding:22px;margin-bottom:14px}
+  .cat-detail h3{font-size:22px;color:#0d5c46}
+  .cat-detail p{color:#555;margin:6px 0 14px}
+  .lvl-row{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #e5e0d5;border-radius:12px;padding:12px 14px;margin-bottom:8px}
+  .lvl-row b{color:#0d5c46;min-width:150px}
+  .lb-row{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #e5e0d5;border-radius:12px;padding:12px 14px;margin-bottom:8px}
+  .lb-rank{font-size:22px;font-weight:800;color:#ffb703;min-width:40px;text-align:center}
+  #stars span{cursor:pointer}
+  .topactions{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 0 12px}
+  .topactions button{flex:1;min-width:130px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:11px 12px;font-weight:700;cursor:pointer;font-size:14px}
+  .topactions button:hover{background:#ffb703;color:#222}
+  #cat-grid{display:flex;flex-direction:column;gap:8px}
+  #cat-grid .card{display:flex;align-items:center;gap:12px;text-align:left;padding:15px 16px}
+  #cat-grid .card::after{content:'›';margin-left:auto;font-size:26px;color:#0d5c46;font-weight:700}
+  .quickrow{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:520px;margin:14px auto 0}
+  .quickrow button{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:9px 14px;font-weight:700;cursor:pointer;font-size:14px}
+  @media(min-width:768px){
+    #cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .topactions{display:flex;flex-wrap:nowrap}
+    .quickrow{display:flex;justify-content:center;max-width:none}
+    .hero h1{font-size:40px}
+  }
+  .loginwrap{position:relative;flex:1;min-width:130px}
+  .loginwrap>button{width:100%}
+  .logindrop{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#0d5c46;border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:8px;z-index:30}
+  .logindrop button{display:block;width:100%;background:#fff;color:#0d5c46;border:0;border-radius:20px;padding:10px 12px;font-weight:700;cursor:pointer;font-size:14px;margin-bottom:6px}
+  .logindrop button:last-child{margin-bottom:0}
+  .quickrow .loginwrap{flex:0 1 auto;min-width:150px}
+
+  /* v6.0 polish */
+  header{box-shadow:0 2px 14px rgba(0,0,0,.18)}
+  .btn{box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .15s ease,box-shadow .15s ease}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(0,0,0,.16)}
+  section h2{position:relative;padding-bottom:9px}
+  section h2::after{content:'';position:absolute;left:0;bottom:0;width:52px;height:4px;border-radius:2px;background:#ffb703}
+  .shopbox h2::after,.wholesale h2::after{background:#ffb703}
+  #cat-grid .card{border-left:5px solid #0d5c46;transition:box-shadow .15s ease,transform .15s ease}
+  #cat-grid .card:hover{box-shadow:0 8px 20px rgba(13,92,70,.16);transform:translateY(-2px)}
+  .lb-rank{background:#0d5c46;color:#fff;border-radius:50%;width:44px;height:44px;line-height:44px;flex:none;font-size:19px}
+  .badgechip{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:800;margin:2px 4px 2px 0}
+  .badge-verified{background:#e8f3ee;color:#0d5c46;border:1px solid #0d5c46}
+  .badge-level{background:#fff3d6;color:#7a5b00;border:1px solid #e5c07b}
+  .badge-launch{background:#ffb703;color:#222;border:1px solid #e5a400}
+  .fchip{display:inline-block;background:#fff;border:2px solid #0d5c46;color:#0d5c46;border-radius:12px;padding:8px 12px;font-weight:800;margin:0 6px 8px 0;font-size:14px}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+  .pkg{background:#fff;border:1px solid #e5e0d5;border-radius:12px;padding:14px}
+  .pkg b{color:#0d5c46;font-size:16px}
+  .spon-tag{display:inline-block;background:#222;color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:.4px}
+  .nearme{background:#eef6f1;border:1px solid #bcd8c8;border-radius:12px;padding:16px;margin-top:18px}
+  .nearme h3{font-size:17px;color:#0d5c46;margin-bottom:6px}
+  .nearme li{margin-bottom:4px}
+  .art-card{display:flex;gap:16px;background:#fff;border:1px solid #e5e0d5;border-radius:14px;padding:14px;align-items:flex-start;transition:box-shadow .15s ease}
+  .art-card:hover{box-shadow:0 8px 20px rgba(13,92,70,.16)}
+  .art-card img{width:230px;height:155px;object-fit:cover;border-radius:10px;flex:none}
+  @media(max-width:600px){.art-card{flex-direction:column}.art-card img{width:100%;height:180px}}
+  footer nav a{margin:0 7px}
+  .direct-answer{font-size:17px;max-width:860px}
+  .faq-item{background:#fff;border:1px solid #e5e0d5;border-radius:12px;padding:16px;margin-bottom:10px}
+  .faq-item h3{font-size:18px;color:#0d5c46;margin-bottom:5px}
+  .faq-item p{color:#444}
+</style>
+<link rel="canonical" href="https://nearoffer.pages.dev/">
+<meta property="og:title" content="NearOffer — Faisalabad Offers, Wedding Halls, Local Shops">
+<meta property="og:description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus masjid details and practical city guides.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nearoffer.pages.dev/">
+<meta property="og:image" content="https://nearoffer.pages.dev/articles/images/faisalabad-wedding-hall-walima-stage.jpg">
+<meta property="og:image:alt" content="Wedding hall in Faisalabad decorated with a floral stage for a walima reception">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NearOffer — Faisalabad Offers, Wedding Halls, Local Shops">
+<meta name="twitter:description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus masjid details and practical city guides.">
+<meta name="twitter:image" content="https://nearoffer.pages.dev/articles/images/faisalabad-wedding-hall-walima-stage.jpg">
+<meta name="twitter:image:alt" content="Wedding hall in Faisalabad decorated with a floral stage for a walima reception">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nearoffer.pages.dev/#organization",
+      "name": "NearOffer",
+      "url": "https://nearoffer.pages.dev/",
+      "description": "NearOffer is a preview-stage local discovery platform for physical shops, venues and places in Faisalabad, Pakistan.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Faisalabad",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "Pakistan"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nearoffer.pages.dev/#website",
+      "name": "NearOffer",
+      "url": "https://nearoffer.pages.dev/",
+      "publisher": {
+        "@id": "https://nearoffer.pages.dev/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://nearoffer.pages.dev/#faq",
+      "url": "https://nearoffer.pages.dev/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is NearOffer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NearOffer is a preview-stage local discovery platform for physical shops, venues and places in Faisalabad. It helps customers find offers and useful local information before visiting a business in person."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which city is NearOffer launching in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NearOffer is launching first in Faisalabad, Pakistan. Other cities are planned for later stages after the Faisalabad launch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can a shop join NearOffer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A shop joins by completing the Dukaan Portal registration form on NearOffer. The NearOffer team reviews the submission, and verification is based on phone or WhatsApp confirmation plus a matching shop photo and address."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NearOffer ranking for sale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. NearOffer ranking is never sold; it is based on followers, genuine visits, ratings and new offers. Sponsored placements are labelled separately and do not buy a higher rank."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do customers use NearOffer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Customers browse categories and areas, open a shop or place, check its offer or information, and then visit or contact the business directly. NearOffer does not process payments or provide delivery through the platform."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="logo">Near<span>Offer</span></div>
+      <div class="city-badge">Faisalabad • Launch City</div>
+    </div>
+    <div class="topactions">
+      <button type="button" onclick="showAllRoles();document.getElementById('categories').scrollIntoView({behavior:'smooth'});">Categories</button>
+      <button type="button" onclick="document.getElementById('leaderboard-sec').scrollIntoView({behavior:'smooth'});">Leaderboard</button>
+      <div class="loginwrap">
+        <button type="button" onclick="toggleLogin('login-drop-h')">Login ▾</button>
+        <div class="logindrop" id="login-drop-h">
+          <button type="button" onclick="loginGo('customer','login-drop-h')">Customer Login</button>
+          <button type="button" onclick="loginGo('shop','login-drop-h')">Dukaan Login</button>
+          <p style="color:#fff;font-size:12px;margin:4px 6px 2px">Preview: ye register form ki entry hai — asli login launch par.</p>
+        </div>
+      </div>
+      <button type="button" onclick="showRole('customer');document.getElementById('chatbot-sec').scrollIntoView({behavior:'smooth'});">Chatbot</button>
+      <button type="button" style="grid-column:1/-1" onclick="location.href='articles/index.html'">Articles</button>
+    </div>
+  </div>
+</header>
+
+<div id="role-bar" style="display:none;background:#fff3d6;border-bottom:1px solid #e5c07b;padding:10px 0"><div class="wrap" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center"><span id="role-label" style="font-weight:700"></span><button type="button" onclick="showRole('customer')" style="background:#0d5c46;color:#fff;border:0;border-radius:20px;padding:8px 14px;font-weight:700;cursor:pointer">Customer view</button><button type="button" onclick="showRole('shop')" style="background:#0d5c46;color:#fff;border:0;border-radius:20px;padding:8px 14px;font-weight:700;cursor:pointer">Dukaan view</button><button type="button" onclick="showAllRoles()" style="background:#fff;border:1px solid #0d5c46;color:#0d5c46;border-radius:20px;padding:8px 14px;font-weight:700;cursor:pointer">Sab kuch dekhein</button></div></div>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Faisalabad ki dukaanon ki offers,<br>ab <span>ek jagah.</span></h1>
+    <p>Kapre ki sab se bari market se le kar container maal tak — asli prices, verified dukaanen, aur wholesale bhi. Dukaan wale ki sale zyada, khareedne wale ki bachat zyada.</p>
+    <div class="cta-row">
+      <a class="btn btn-amber" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan Portal — Offer Lagayein</a>
+      <a class="btn btn-outline" href="#categories" onclick="showRole('customer');document.getElementById('categories').scrollIntoView({behavior:'smooth'});return false;">Offers Dekhein (Customer)</a>
+    </div>
+    <div class="quickrow">
+      <button type="button" onclick="showAllRoles();document.getElementById('categories').scrollIntoView({behavior:'smooth'});">Categories</button>
+      <button type="button" onclick="document.getElementById('leaderboard-sec').scrollIntoView({behavior:'smooth'});">Leaderboard dekhein</button>
+      <div class="loginwrap">
+        <button type="button" onclick="toggleLogin('login-drop-q')">Login ▾</button>
+        <div class="logindrop" id="login-drop-q">
+          <button type="button" onclick="loginGo('customer','login-drop-q')">Customer Login</button>
+          <button type="button" onclick="loginGo('shop','login-drop-q')">Dukaan Login</button>
+          <p style="color:#fff;font-size:12px;margin:4px 6px 2px">Preview: ye register form ki entry hai — asli login launch par.</p>
+        </div>
+      </div>
+      <button type="button" onclick="showRole('customer');document.getElementById('chatbot-sec').scrollIntoView({behavior:'smooth'});">Chatbot se poochhein</button>
+      <button type="button" style="grid-column:1/-1" onclick="location.href='articles/index.html'">Articles — Guides parhein</button>
+    </div>
+  </div>
+</div>
+
+<section id="faq-sec">
+  <div class="wrap">
+    <h2>What is NearOffer?</h2>
+    <p class="direct-answer">NearOffer is a preview-stage local discovery platform for Faisalabad, Pakistan. It brings together offers from physical shops, booking information for wedding halls and marquees, discovery details for masjids, and practical local guides across 25 categories. Customers use NearOffer to discover a place, review its published offer or information, and then visit or contact the business directly. NearOffer does not process payments or provide delivery through the platform.</p>
+    <div style="margin-top:24px">
+      <div class="faq-item">
+        <h3>What is NearOffer?</h3>
+        <p>NearOffer is a preview-stage local discovery platform for physical shops, venues and places in Faisalabad. It helps customers find offers and useful local information before visiting a business in person.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which city is NearOffer launching in?</h3>
+        <p>NearOffer is launching first in Faisalabad, Pakistan. Other cities are planned for later stages after the Faisalabad launch.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can a shop join NearOffer?</h3>
+        <p>A shop joins by completing the Dukaan Portal registration form on NearOffer. The NearOffer team reviews the submission, and verification is based on phone or WhatsApp confirmation plus a matching shop photo and address.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is NearOffer ranking for sale?</h3>
+        <p>No. NearOffer ranking is never sold; it is based on followers, genuine visits, ratings and new offers. Sponsored placements are labelled separately and do not buy a higher rank.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do customers use NearOffer?</h3>
+        <p>Customers browse categories and areas, open a shop or place, check its offer or information, and then visit or contact the business directly. NearOffer does not process payments or provide delivery through the platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="chatbot-sec">
+  <div class="wrap">
+    <div class="chatbox" style="margin-top:18px">
+      <div class="chead">NearOffer Chatbot — Demo (customer ke sawal, foran jawab)</div>
+      <div class="cbody" id="bot-body">
+        <p style="color:#555">Neeche koi sample sawal dabayein — demo jawab nazar aayega. Asli chatbot launch par dukaan ke live data se jawab dega.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;padding:12px;background:#fff;border-top:1px solid #e5e0d5">
+        <button type="button" onclick="botAsk(1)" style="background:#e8f3ee;color:#0d5c46;border:0;border-radius:20px;padding:8px 13px;font-weight:700;cursor:pointer">Katchery mein mobile ki offer?</button>
+        <button type="button" onclick="botAsk(2)" style="background:#e8f3ee;color:#0d5c46;border:0;border-radius:20px;padding:8px 13px;font-weight:700;cursor:pointer">Dukaan kab khulti hai?</button>
+        <button type="button" onclick="botAsk(3)" style="background:#e8f3ee;color:#0d5c46;border:0;border-radius:20px;padding:8px 13px;font-weight:700;cursor:pointer">Wholesale milega?</button>
+      </div>
+      <div class="cfoot">
+        <input type="text" id="bot-input" placeholder="Apna sawal yahan likhein (demo)...">
+        <button type="button" onclick="botAsk(0)">Bhejein</button>
+      </div>
+      <p class="note" style="padding:0 12px 12px">Preview demo: asli chatbot full platform par live hoga — jawab sirf dukaan ke diye hue data se hoga, andaza nahi lagayega. Jo pata na ho to chatbot dukaan ka WhatsApp number de dega.</p>
+    </div>
+  </div>
+</section>
+
+<section id="leaderboard-sec">
+  <div class="wrap">
+    <h2>Leaderboard — Faisalabad ki top dukaanen</h2>
+    <p class="sub">Ranking ka formula sab ke saamne hai: followers + asli visits + rating + nayi offers. Ranking kabhi bikau nahi — featured alag hota hai, aur labeled hota hai.</p>
+    <p style="font-weight:700;color:#7a5b00">Status: Jald aa raha hai — pehli verified dukaan aate hi live hoga.</p>
+    <div style="margin:6px 0 14px">
+      <span class="fchip">Followers</span><span style="font-weight:800;color:#0d5c46">+</span>
+      <span class="fchip">Asli visits</span><span style="font-weight:800;color:#0d5c46">+</span>
+      <span class="fchip">Rating ★</span><span style="font-weight:800;color:#0d5c46">+</span>
+      <span class="fchip">Nayi offers</span>
+      <p class="note" style="margin-top:2px">Yahi chaar cheezein rank tay karti hain — koi chhupa hua number nahi. Featured jagah alag hoti hai, hamesha labeled, aur rank par us ka koi asar nahi.</p>
+    </div>
+    <div class="lb-row"><div class="lb-rank">#1</div><div><b>—</b><p style="color:#555;font-size:14px">Pehli verified dukaan aate hi yahan nazar aayegi.</p></div></div>
+    <div class="lb-row"><div class="lb-rank">#2</div><div><b>—</b><p style="color:#555;font-size:14px">Preview mein koi asli dukaan, follower ya rating nahi hai — ye leaderboard ka structure hai.</p></div></div>
+    <div class="lb-row"><div class="lb-rank">#3</div><div><b>—</b><p style="color:#555;font-size:14px">Fake follower ya fake review par badge aur rank wapas le liya jayega.</p></div></div>
+      </div>
+</section>
+
+<section id="categories">
+  <div class="wrap">
+    <h2>Categories</h2>
+    <p class="sub">Category chunein, us ki offers dekhein.</p>
+    <div style="background:#fff;border:2px dashed #ffb703;border-radius:14px;padding:16px;margin-bottom:14px">
+      <span style="background:#ffb703;color:#222;font-weight:800;font-size:12px;padding:4px 10px;border-radius:20px">SAMPLE — asli offer nahi</span>
+      <p style="margin-top:10px"><b>👕 Mardana Wash n Wear Suit</b> — Sample Dukaan, Katchery Bazaar ✓</p>
+      <p style="color:#555;font-size:14px">Regular <s>Rs 2,500</s> → <b style="color:#0d5c46">Offer Rs 1,999 (20% off)</b> • Wholesale available • Valid: sample</p>
+      <p class="note">Ye sirf sample hai taake aap dekh saken ke asli offer kaisi nazar aayegi. Asli offers pehli verified dukaan ke saath aayengi.</p>
+    </div>
+    <div id="show-all-wrap" style="display:none;margin-bottom:14px"><button type="button" onclick="showAllCategories()" style="background:#0d5c46;color:#fff;border:0;border-radius:20px;padding:9px 16px;font-weight:700;cursor:pointer">← Sab categories wapas dekhein</button></div>
+    <div id="cat-detail" class="cat-detail" style="display:none">
+      <h3 id="cd-name"></h3>
+      <p id="cd-desc"></p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-green" href="#customer-view" onclick="goCustomerOffers();return false;">Offers dekhein (Customer)</a>
+        <a class="btn btn-amber" id="cd-portal" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a>
+      </div>
+      <p class="note" id="cd-note">Is category ki live offers pehli verified dukaan ke saath yahan nazar aayengi. Preview mein koi asli offer, dukaan ya rating nahi hai.</p>
+    </div>
+    <input type="text" id="cat-search" placeholder="Category dhoondhein... (misal: mobile)" oninput="filterCats(this.value)" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:10px;font-size:15px;margin-bottom:12px">
+    <div class="grid" id="cat-grid">
+      <div class="card" id="cat-kapra"><b>👕 Kapra / Cloth</b><p>Kapre: suit, shirt, lawn, bed sheets — wholesale bhi.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-dhaga"><b>🧶 Dhaga</b><p>Dhaga aur fabric — mills aur traders ke liye.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-motor"><b>🔧 Motor Market</b><p>Container maal: imported branded cheezein, wholesale rate.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-motorcycle"><b>🏍️ Motorcycle</b><p>Motorcycle, parts aur service — bike ki har cheez.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-electronics"><b>📺 Electronics</b><p>Home appliances, gadgets — asli price, verified dukaan.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-mobile"><b>📱 Mobile</b><p>Mobiles aur accessories — har dukaan ka apna rate, compare karein.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-food"><b>🍲 Food</b><p>Restaurants, bakeries, sweets — aaj ki offer, aaj hi.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-hardware"><b>🛠️ Hardware</b><p>Tools, sanitary, electrical — chhota kaam ho ya bara project.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-home"><b>🏠 Home Items</b><p>Ghar ki cheezein — imported aur local dono.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-furniture"><b>🛋️ Furniture</b><p>Sofa, bed, table, almari — naye aur order par bhi.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-shoes"><b>👟 Shoes</b><p>Jootay, chappal, sneakers — har size, har rate.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-jewellery"><b>💍 Jewellery</b><p>Sona, artificial, watches — asli dukaan, asli price.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-grocery"><b>🛒 Grocery / Kirana</b><p>Rozmarra ka saamaan — aata, ghee, daal, masale.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-books"><b>📚 Books &amp; Stationery</b><p>Kitabein, copies, school/office ka saamaan.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-education"><b>🎓 Education</b><p>Admissions: kis university/college mein admission offer aayi hai — yahan nazar aayegi.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-salon"><b>💇 Salon &amp; Beauty</b><p>Haircut, beauty, cosmetics — aaj ki offer dekh kar jayein.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-sports"><b>⚽ Sports &amp; Fitness</b><p>Sports ka saamaan, gym, fitness — sab kuch ek jagah.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-toys"><b>🧸 Toys &amp; Gifts</b><p>Bachon ke khilone aur gifts — birthday ho ya Eid.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-crockery"><b>🍽️ Crockery</b><p>Bartan, dinner set, glassware — ghar ke liye sab kuch.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-services"><b>🔌 Services</b><p>Plumber, electrician, tailoring aur deegar services — kaam wale ka number aur offer.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-hosiery"><b>👔 Hosiery (Garments)</b><p>Bane hue kapre: t-shirts, trousers, bachon ke kapre — wholesale bhi.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-medical"><b>💊 Medical</b><p>Dawaaiyan aur medical ka saamaan — wholesale rate, companies aur wholesalers bhi.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-laptop"><b>💻 Laptop &amp; Accessories</b><p>Laptop, charger, bag, mouse — laptop ki har cheez, asli price par.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-wedding"><b>🏛️ Wedding Halls &amp; Marquees</b><p>Shaadi hall aur marquees — nikah, baraat aur walima ke packages aur booking offers.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+      <div class="card" id="cat-masjid"><b>🕌 Masjids</b><p>Masajid ki location aur namaz se mutaliq maloomat — discovery point, yahan offers nahi lagte.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="customer-view" style="padding-top:0">
+  <div class="wrap">
+    <h2>Customer account — follow, review, aur seedha rabta</h2>
+    <p class="sub">Account banayein, dukaan follow karein, visit ke baad review dein. 1 phone = 1 account, 1 phone = 1 review.</p>
+    <p id="cat-context" class="note" style="display:none"></p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>Phone se account banayein</b><p>Naam + phone number — 1 phone = 1 account.</p></div>
+      <div class="step"><div class="n">2</div><b>Dukaan follow karein</b><p>Pasand ki dukaan follow karein — us ki nayi offers aap ko nazar aayengi, offers compare karein.</p></div>
+      <div class="step"><div class="n">3</div><b>Visit ke baad review dein</b><p>Stars + text — 1 phone = 1 review, dukaan jawab de sakti hai.</p></div>
+      <div class="step"><div class="n">4</div><b>Direct rabta</b><p>Dukaan se WhatsApp/phone par baat — deal dukaan se, platform sirf milata hai.</p></div>
+    </div>
+    <div class="nearme">
+      <h3>📍 Qareebi areas — apna faasla check karein</h3>
+      <p style="color:#555;font-size:14px">GPS dabayein — aap ke sab se qareeb Faisalabad ke areas aur un ka faasla (km) nazar aayega. Faasla har area ke darmiyani point se hisaab hota hai.</p>
+      <button class="btn btn-green" type="button" onclick="nearMe()" style="margin-top:10px">📍 Mera faasla check karein</button>
+      <p class="note" id="nearme-note" style="display:none"></p>
+      <ol id="nearme-list" style="margin:10px 0 0 20px"></ol>
+    </div>
+    <div class="infobox">
+      <h3>Customer account banayein (free)</h3>
+      <form onsubmit="document.getElementById('cust-note').style.display='block';return false;">
+        <div class="sstep" id="cust-step1">
+        <label>Aapka naam</label>
+        <input type="text" placeholder="Misal: Ahmed Raza" required>
+        <label>Phone / WhatsApp number</label>
+        <input type="tel" placeholder="03xx-xxxxxxx" pattern="03[0-9]{2}-[0-9]{7}" title="Format: 03xx-xxxxxxx" required>
+        <button class="btn btn-green" type="button" onclick="custStep(2)">Agla Step → Follow + Review Demo</button>
+        </div>
+        <div class="sstep" id="cust-step2" style="display:none">
+        <p style="margin:12px 0"><b>Demo dukaan:</b> Ahmed Cloth House — Verified ✓ — Katchery Bazaar <span id="demo-dist" style="color:#0d5c46;font-weight:700"></span></p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-green" type="button" id="follow-btn" onclick="followToggle()">+ Follow karein</button>
+          <button class="btn btn-outline" style="border-color:#0d5c46;color:#0d5c46" type="button" onclick="shareNote()">Share karein</button>
+        </div>
+        <p class="note" id="share-note" style="display:none">Preview: asli share par dukaan ka badge card (naam + rating + QR) WhatsApp status par lagane ke liye milega.</p>
+        <label>Visit ke baad review — stars chunein</label>
+        <div id="stars" style="font-size:28px;letter-spacing:4px"><span onclick="starSel(1)">☆</span><span onclick="starSel(2)">☆</span><span onclick="starSel(3)">☆</span><span onclick="starSel(4)">☆</span><span onclick="starSel(5)">☆</span></div>
+        <label>Review likhein</label>
+        <textarea rows="3" style="width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;font-size:15px" placeholder="Misal: Rate munasib tha, kapra asli tha."></textarea>
+        <p class="note">1 phone = 1 review. Dukaan aapke review ka jawab de sakti hai. Ghalat review par report ka button hoga.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-outline" style="border-color:#0d5c46;color:#0d5c46" type="button" onclick="custStep(1)">← Peeche</button><button class="btn btn-green" type="submit">Account Banayein — Free</button></div>
+        <p class="note" id="cust-note" style="display:none">Preview version: ye form ka design hai. Asli customer account full platform launch par live hoga — tab follow + review + ranking sab isi account se chalega.</p>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+</section>
+
+<section id="shop-portal" style="padding-top:0">
+  <div class="wrap">
+    <div class="portal">
+      <h2>Dukaan Portal — register, login, offers upload</h2>
+      <p class="sub">Account banayein, offers upload karein, apna page/link + QR payein. Page par shop number aur exact location hogi, taake customer seedha aapki dukaan tak pahunche.</p>
+      <form onsubmit="document.getElementById('form-note').style.display='block';return false;">
+        <p id="shop-step-label" style="font-weight:700;color:#0d5c46">Step 1/4 — Dukaan ki tafseel</p>
+        <div class="sstep" id="shop-step1">
+        <label>Dukaan ka naam</label>
+        <input type="text" placeholder="Misal: Ahmed Cloth House" required>
+        <label>Category</label>
+        <select required>
+          <option value="">Category chunein</option>
+          <option>Kapra / Cloth</option><option>Dhaga</option><option>Motor Market</option><option>Motorcycle</option>
+          <option>Electronics</option><option>Mobile</option><option>Food</option><option>Hardware</option>
+          <option>Home Items</option><option>Furniture</option><option>Shoes</option><option>Jewellery</option>
+          <option>Grocery / Kirana</option><option>Books &amp; Stationery</option><option>Education</option>
+          <option>Salon &amp; Beauty</option><option>Sports &amp; Fitness</option><option>Toys &amp; Gifts</option>
+          <option>Crockery</option><option>Services</option><option>Hosiery (Garments)</option><option>Medical</option><option>Laptop &amp; Accessories</option><option>Wedding Halls &amp; Marquees</option><option>Masjids (sirf location / maloomat — offer nahi)</option>
+        </select>
+        <label>Area type chunein</label>
+        <select id="area-type" onchange="filterAreas(this.value)" required>
+          <option value="">Area type chunein</option>
+          <option value="bazaar">Ghanta Ghar — Bazaars</option>
+          <option value="sheher">Sheher ke areas</option>
+          <option value="road">Roads / Commercial</option>
+          <option value="airport">Airport</option>
+        </select>
+        <label>Area — list se chunein (typing nahi)</label>
+        <select id="shop-area" required>
+          <option value="">Area chunein</option>
+          <optgroup label="Ghanta Ghar — 8 Bazaars">
+            <option>Aminpur Bazaar</option><option>Chiniot Bazaar</option><option>Katchery Bazaar</option><option>Rail Bazaar</option><option>Karkhana Bazaar</option><option>Montgomery Bazaar</option><option>Jhang Bazaar</option><option>Bhawana Bazaar</option><option>Gole Bazaar</option>
+          </optgroup>
+          <optgroup label="Sheher ke areas">
+            <option>Madina Town</option><option>Jinnah Colony</option><option>Gulberg</option><option>Millat Town</option><option>Ghulam Muhammad Abad</option><option>Iqbal Town</option><option>Peoples Colony No. 1</option><option>Peoples Colony No. 2</option><option>D Ground</option><option>Samanabad</option><option>Model Town</option><option>Model City</option><option>Civil Lines</option><option>Sir Syed Town</option><option>Gulistan Colony</option><option>Gulbahar Colony</option><option>Batala Colony</option><option>Abdullahpur</option><option>Nishatabad</option><option>Mansoorabad</option><option>Madan Pura</option><option>Manawala</option><option>Muslim Town</option><option>Sarfraz Colony</option><option>Saeed Colony</option><option>Islam Nagar</option><option>Sant Nagar</option><option>Dhobi Ghaat</option><option>Dugluspura</option><option>Tata Bazaar</option><option>Gobind Pura</option><option>Eden Gardens</option><option>Eden Valley</option><option>WAPDA City</option><option>FDA City</option><option>Citi Housing</option><option>Canal View Housing</option><option>Sitara Valley</option><option>Royal City</option><option>Executive Lodges</option><option>Gokhowal</option><option>Gatwala</option><option>Kohinoor City</option><option>Sheikh Colony</option><option>Tariq Abad</option><option>Raza Abad</option><option>Eden Executive</option><option>Wadi-e-Sitara</option><option>Khayaban Colony</option><option>Allama Iqbal Colony</option><option>Amin Town</option>
+          </optgroup>
+          <optgroup label="Roads / Commercial">
+            <option>Susan Road</option><option>Satiana Road</option><option>Jaranwala Road</option><option>Samundri Road</option><option>Canal Road</option><option>Jhang Road</option><option>Sargodha Road</option><option>Circular Road</option><option>Motor Market</option><option>Thikriwala</option><option>Sheikhupura Road</option><option>Narwala Road</option>
+          </optgroup>
+          <optgroup label="Airport">
+            <option>Airport Area</option>
+          </optgroup>
+        </select>
+        <label>Shop Number</label>
+        <input type="text" placeholder="Misal: Shop No. 14" required>
+        <label>Dukaan ki exact location (mukammal pata / mashhoor nishani)</label>
+        <input type="text" id="shop-address" placeholder="Misal: Karkhana Bazaar, Gole Bazaar ke paas" required>
+        <label>GPS location (button dabayein, coordinates khud aa jayengi)</label>
+        <div style="display:flex;gap:8px">
+          <input type="text" id="shop-gps" placeholder="Latitude, Longitude" readonly style="flex:1">
+          <button type="button" onclick="setGPS()" style="background:#0d5c46;color:#fff;border:0;border-radius:8px;padding:11px 14px;font-weight:700;cursor:pointer;white-space:nowrap">📍 GPS lagayein</button>
+        </div>
+        <p class="note" id="gps-note" style="display:none"></p>
+        <label>Phone / WhatsApp number</label>
+        <input type="tel" placeholder="03xx-xxxxxxx" pattern="03[0-9]{2}-[0-9]{7}" title="Format: 03xx-xxxxxxx" required>
+        <button class="btn btn-green" type="button" onclick="shopStep(2)">Agla Step → Dukaan ki Tafseel</button>
+        </div>
+        <div class="sstep" id="shop-step2" style="display:none">
+        <label>Dukaan ki description (kya bechte hain, kya khaas hai)</label>
+        <textarea rows="3" style="width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;font-size:15px" placeholder="Misal: Har qisam ka mardana suit, wholesale rate par, 20 saal se isi bazaar mein."></textarea>
+        <label><input type="checkbox" style="width:auto"> Wholesale available hai</label>
+        <label>Minimum bulk quantity (agar wholesale ho)</label>
+        <input type="text" placeholder="Misal: 10 piece ya 50 meter">
+        <label>Referral code (agar kisi dukaan ne refer kiya ho to likhein)</label>
+        <input type="text" placeholder="Misal: AHMED-14">
+        <p class="note">Referral reward: jab aapki referred dukaan verified ho jaye aur us ki pehli live offer lag jaye, tab refer karne wali dukaan ko extra offer slot + free featured time milega.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-outline" style="border-color:#0d5c46;color:#0d5c46" type="button" onclick="shopStep(1)">← Peeche</button><button class="btn btn-green" type="button" onclick="shopStep(3)">Agla Step → Pehli Offer</button></div>
+        </div>
+        <div class="sstep" id="shop-step3" style="display:none">
+        <label>Pehli offer — cheez ka naam</label>
+        <input type="text" placeholder="Misal: Mardana Wash n Wear Suit">
+        <label>Regular price (Rs)</label>
+        <input type="number" placeholder="Misal: 2500">
+        <label>Offer price (Rs)</label>
+        <input type="number" placeholder="Misal: 1999">
+        <label>Offer ki aakhri tareekh (validity)</label>
+        <input type="date">
+        <p class="note">Offer ki photo portal se upload hogi (launch par). Expired offer khud hide ho jayegi. Free dukaan: max 5 active offers, ek item par ek offer.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-outline" style="border-color:#0d5c46;color:#0d5c46" type="button" onclick="shopStep(2)">← Peeche</button><button class="btn btn-green" type="button" onclick="shopStep(4)">Agla Step → Jaiza</button></div>
+        </div>
+        <div class="sstep" id="shop-step4" style="display:none">
+        <p style="margin:12px 0">Aapki tafseel, description aur pehli offer ka jaiza upar wale steps mein hai. Submit karte hi request team tak jayegi — team verify karke (WhatsApp/phone OTP + dukaan photo/address match) activate karegi aur dukaan ko apna page/link + QR milega.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-outline" style="border-color:#0d5c46;color:#0d5c46" type="button" onclick="shopStep(3)">← Peeche</button><button class="btn btn-green" type="submit">Register Karein — Free</button></div>
+        <p class="note" id="form-note" style="display:none">Preview version: ye form ka design hai. Asli registration full platform launch par live hogi — tab har request seedha team tak jayegi, team verify karke (WhatsApp/phone OTP + dukaan photo/address match) activate karegi aur dukaan ko apna page/link + QR milega.</p>
+        </div>
+      </form>
+      <div class="infobox">
+        <h3>Offer upload — portal se (launch par)</h3>
+        <ol>
+          <li>Offer ki photo + regular price + offer price + % off + validity dates likhein (lazmi).</li>
+          <li>"Wholesale available" ho to tick karein + minimum bulk quantity likhein.</li>
+          <li>Submit karte hi offer aapke page par live — expired offer auto-hide.</li>
+          <li>Free dukaan: max 5 active offers. Ek item par ek offer.</li>
+        </ol>
+      </div>
+      <div class="infobox">
+        <h3>Password bhool gaye? — Bina SMS code ke recovery</h3>
+        <ol>
+          <li>Neeche Help Chat mein likhein: "password reset".</li>
+          <li>Team aapki <b>registered details</b> se verify karegi: phone number + dukaan ka naam/address (zaroorat par dukaan ki photo match).</li>
+          <li>Verify hote hi chat mein hi <b>one-time temporary password</b> milega — sirf aik dafa, thodi der ke liye.</li>
+          <li>Us se login karke <b>fauran apna naya password set karein</b> — temp khatam. Team aapka apna password kabhi nahi dekhti aur na save karti hai; har reset ka record rehta hai.</li>
+        </ol>
+        <p class="note">Koi SMS/WhatsApp code nahi bheja jata — verification team ke haath mein hai, isi liye ye tareeqa sirf registered dukaanon ke liye hai.</p>
+      </div>
+      <div class="chatbox">
+        <div class="chead">NearOffer Help Chat — koi issue ho to yahin likhein</div>
+        <div class="cbody">
+          <p style="color:#555">Yahan apna issue likhein — misal: "mera password reset kar dein" ya "meri offer nazar nahi aa rahi". Request seedha team tak jayegi.</p>
+        </div>
+        <div class="cfoot">
+          <input type="text" placeholder="Apna issue yahan likhein...">
+          <button onclick="document.getElementById('chat-note').style.display='block';">Bhejein</button>
+        </div>
+        <p class="note" id="chat-note" style="display:none;padding:0 12px 12px">Preview version: chat ka design hai. Asli chat full platform launch par live hogi — tab team isi chat se fauran resolve karegi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wholesale-sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="wholesale">
+      <h2>Bara buyer? Wholesale bhi.</h2>
+      <p>Poore Pakistan aur doosri countries ke buyers computer par offers check karke bulk order book kar sakte hain. Offer par "Wholesale available" flag + minimum bulk quantity nazar aayegi. Verified tick + asli address + photo = bara order ka bharosa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="shopbox-sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="shopbox">
+      <h2>Dukaan walon ke liye: Pehli 100 — Launch Partner</h2>
+      <p>Faisalabad launch par pehli 100 verified dukaanen hamesha ke liye "Launch Partner" kehlayengi — permanent badge, apna page/link + QR (WhatsApp status par lagane ke liye), aur free verified listing. Registration upar wale Dukaan Portal form se hogi — team us ko fauran manage karegi.</p>
+      <a class="btn btn-amber" href="#shop-portal">Launch Partner Banein — Portal Se</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Agli cities — Coming Soon</h2>
+    <p class="sub">Launch par sirf Faisalabad live hai. Baaki cities waitlist par — jis city ki waitlist bari hogi, wo agla launch hoga.</p>
+    <div class="cities">
+      <span>Lahore <span class="soon">— coming soon</span></span>
+      <span>Karachi <span class="soon">— coming soon</span></span>
+      <span>Islamabad <span class="soon">— coming soon</span></span>
+      <span>Multan <span class="soon">— coming soon</span></span>
+      <span>Rawalpindi <span class="soon">— coming soon</span></span>
+      <span>Sialkot <span class="soon">— coming soon</span></span>
+    </div>
+  </div>
+</section>
+
+<section id="engage-sec">
+  <div class="wrap">
+    <h2 style="margin-top:28px">Dukaan ke levels — jitne follower, utna bara naam</h2>
+    <p class="sub">Har dukaan isi seedhi par upar jati hai. Naam sirf asli followers aur rating se milta hai.</p>
+    <div class="lvl-row"><b>Nayi</b><span>Register hote hi — nayi dukaan.</span></div>
+    <div class="lvl-row"><b>Verified ✓</b><span>Phone/WhatsApp OTP + dukaan photo/address match ke baad.</span></div>
+    <div class="lvl-row"><b>Ubharti</b><span>50 followers par.</span></div>
+    <div class="lvl-row"><b>Mashhoor</b><span>200 followers par.</span></div>
+    <div class="lvl-row"><b>Faisalabad's Favourite</b><span>500 followers + 4.5★ rating par.</span></div>
+    <div class="lvl-row"><b>Launch Partner</b><span>Pehli 100 verified dukaanen — hamesha ke liye, permanent badge.</span></div>
+    <div style="background:#fff;border:2px dashed #ffb703;border-radius:14px;padding:16px;margin-bottom:14px">
+      <span style="background:#ffb703;color:#222;font-weight:800;font-size:12px;padding:4px 10px;border-radius:20px">SAMPLE — asli dukaan nahi</span>
+      <p style="margin-top:10px"><b>Ahmed Cloth House</b> — Katchery Bazaar, Shop No. 14</p>
+      <p style="margin-top:6px"><span class="badgechip badge-verified">Verified ✓</span><span class="badgechip badge-level">Level: Ubharti</span><span class="badgechip badge-launch">Launch Partner</span></p>
+      <p class="note">Dukaan ke card aur profile par badges isi tarah nazar aayenge: Verified tick verification ke baad, level asli followers se, aur Launch Partner sirf pehli 100 verified dukaanon ko — permanent.</p>
+    </div>
+    <div class="infobox">
+      <h3>Refer karein, reward payein</h3>
+      <p><b>Flow:</b> 1) Apna referral code kisi dukaan ko dein (registration form mein code ki jagah hai). 2) Wo dukaan register ho, team verify kare (phone/WhatsApp OTP + dukaan photo/address match). 3) Uski pehli live offer lag jaye — tabhi referral pakka gina jayega.</p>
+      <p style="margin-top:8px"><b>Refer karne wale ko:</b> +1 extra offer slot (5 → 6, ek mahine ke liye) + 1 hafta free featured time + 3 referrals par "Referral Star" badge, 10 par "Brand Ambassador".<br><b>Referred dukaan ko:</b> free verified listing + agar pehli 100 mein ho to Launch Partner badge.</p>
+      <p style="margin-top:8px">Dummy ya apni khud ki dukaan ka referral gina nahi jayega — reward sirf asli, verified dukaan + live offer par hai.</p>
+    </div>
+    <div class="infobox">
+      <h3>Creator / Ambassador program — video banayein, level payein</h3>
+      <div class="lvl-row"><b>Creator</b><span>Sign up + platform ya kisi dukaan ki offer par 1 video/post.</span></div>
+      <div class="lvl-row"><b>Active Creator</b><span>Ek mahine mein 5 posts (ya 3 videos).</span></div>
+      <div class="lvl-row"><b>Brand Ambassador</b><span>15 posts + 5 verified dukaan referrals (dukaan verified + 1 live offer ke baad gine jayenge).</span></div>
+      <div class="lvl-row"><b>Star</b><span>Monthly creator leaderboard ke Top 10 + 20 verified referrals.</span></div>
+      <p style="margin-top:8px"><b>Rewards (bina cash wade ke):</b> har hafte tayyar content kit (is hafte ki 5 best offers — list + photos + caption), apna referral code/link, platform par creator profile + public leaderboard, aur har mahine homepage par "Spotlight". Cash revenue-share sirf tab, jab platform ki paid services launch hon — rate tab tay hoga, abhi koi amount ka wada nahi.</p>
+      <p style="margin-top:8px">Fake followers ya dummy referral par badge aur level wapas. Title follower count par nahi, asli kaam par milta hai.</p>
+    </div>
+    <div class="infobox">
+      <h3>Sponsor packages — launch ke baad (hamesha labeled)</h3>
+      <div class="pkg-grid">
+        <div class="pkg"><span class="spon-tag">SPONSORED</span><p style="margin-top:8px"><b>Launch Sponsor</b></p><p style="color:#555;font-size:14px">Har city mein sirf 1. Launch page aur launch event par naam + logo — "Faisalabad Launch — Sponsored by X".</p></div>
+        <div class="pkg"><span class="spon-tag">SPONSORED</span><p style="margin-top:8px"><b>Category Sponsor</b></p><p style="color:#555;font-size:14px">Har category mein sirf 1. Category ke upar labeled branding — "Wedding Halls — presented by X". Category ki ranking par koi asar nahi.</p></div>
+        <div class="pkg"><span class="spon-tag">PARTNER</span><p style="margin-top:8px"><b>Community Partner</b></p><p style="color:#555;font-size:14px">Bazaar associations, malls aur idaray — cash ke bajaye sahulat/support (announcement, jagah, printing) ke badle pehchan.</p></div>
+      </div>
+      <p style="margin-top:10px">Sponsor hunt validation gate + launch ke baad hi hogi — pehle asli dukaanen aur traffic, phir sponsor. <b>Ranking, user data aur verified tick kabhi sale nahi honge</b> — sponsor ki jagah hamesha alag aur labeled hogi.</p>
+    </div>
+  </div>
+</section>
+
+<section id="articles-sec" style="padding-top:0">
+  <div class="wrap">
+    <h2>Articles — Faisalabad Guides</h2>
+    <p class="sub">Har category ki tafseeli guide — sahi faisla karne ke liye. Roz ek nayi guide; sponsored guides hamesha "Sponsored" label ke saath aayengi.</p>
+    <a href="articles/index.html" style="text-decoration:none;color:inherit">
+    <div class="art-card">
+      <img src="articles/images/faisalabad-wedding-hall-walima-stage.jpg" alt="Wedding hall in Faisalabad decorated with a floral stage for a walima reception">
+      <div>
+        <span class="spon-tag" style="background:#0d5c46">NEW GUIDE</span>
+        <h3 style="color:#0d5c46;margin:8px 0 4px;font-size:19px">Wedding Halls in Faisalabad: The Complete Booking Guide</h3>
+        <p style="color:#555;font-size:14px">Nikah, baraat ya walima — venue chunte waqt areas, per-head pricing, booking checklist aur aam ghaltian. English guide, poori tafseel ke saath.</p>
+        <p style="font-weight:700;color:#0d5c46;margin-top:8px">Guide parhein →</p>
+      </div>
+    </div>
+    </a>
+    <p class="note">Sponsored articles: jab koi brand ya dukaan apne product ki guide sponsor karegi, wo isi section mein saaf "Sponsored" label ke saath aayegi — guide ki maloomat aur ranking par sponsor ka koi asar nahi hoga.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>NearOffer ke baare mein</h2>
+    <p class="sub">Faisalabad ki physical dukaanon ki offers, ek jagah. Platform sirf milata hai — deal dukaan se hoti hai, payment/delivery platform par nahi.</p>
+    <h2>Privacy</h2>
+    <p class="sub">Phone number sirf account aur rabte ke liye hai — kisi teesre ko becha nahi jata. Ranking aur data kabhi sale nahi hote.</p>
+    <h2>Terms</h2>
+    <p class="sub">Offers dukaan ki zimmedari hain — price aur validity dukaan confirm karegi. Ghalat maloomat par listing hatayi ja sakti hai.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:#fff">NearOffer</b> — Faisalabad se shuru, Pakistan → duniya.</p>
+    <nav style="margin:10px 0"><a href="articles/index.html">Articles</a> • <a href="#categories">Categories</a> • <a href="#shop-portal">Dukaan Portal</a> • <a href="#leaderboard-sec">Leaderboard</a></nav>
+    <p>General rabta (WhatsApp): <a href="https://wa.me/923337476228">+92 333 7476228</a> • Sirf physical dukaanen • Koi online seller nahi • Ranking kabhi bikau nahi</p>
+  </div>
+</footer>
+<script>
+function setGPS(){
+  var note=document.getElementById('gps-note');
+  if(!navigator.geolocation){note.style.display='block';note.textContent='Is device/browser mein GPS maujood nahi — pata haath se likhein.';return;}
+  note.style.display='block';note.textContent='Location li ja rahi hai...';
+  navigator.geolocation.getCurrentPosition(function(pos){
+    document.getElementById('shop-gps').value=pos.coords.latitude.toFixed(6)+', '+pos.coords.longitude.toFixed(6);
+    note.innerHTML='GPS lag gaya hai. <a href="https://maps.google.com/?q='+pos.coords.latitude.toFixed(6)+','+pos.coords.longitude.toFixed(6)+'" target="_blank">Map par dekhein</a>';
+  },function(){
+    note.textContent='Location ki ijazat nahi mili — pata haath se likhein.';
+  });
+}
+</script>
+<script>
+function showCategory(id){
+  showAllRoles();
+  var cards=document.querySelectorAll('#cat-grid .card');
+  var chosen=null;
+  cards.forEach(function(c){
+    if(c.id===id){ c.style.display='flex'; chosen=c; }
+    else { c.style.display='none'; }
+  });
+  document.getElementById('show-all-wrap').style.display='block';
+  var det=document.getElementById('cat-detail');
+  if(chosen){
+    var b=chosen.querySelector('b'); var p=chosen.querySelector('p');
+    document.getElementById('cd-name').textContent=b?b.textContent:'';
+    document.getElementById('cd-desc').textContent=p?p.textContent:'';
+    var note=document.getElementById('cd-note');
+    var portal=document.getElementById('cd-portal');
+    var offbtn=det.querySelector('.btn-green');
+    if(id==='cat-masjid'){
+      if(note) note.textContent='Masjids par offers nahi hote — yahan sirf masjid ki location, jamaat/namaz ke auqaat aur sahulat (wuzu, parking) ki maloomat nazar aayengi. Ye sirf discovery point hai.';
+      if(portal) portal.style.display='none';
+      if(offbtn) offbtn.textContent='Masjid ki maloomat dekhein';
+    } else {
+      if(note) note.textContent='Is category ki live offers pehli verified dukaan ke saath yahan nazar aayengi. Preview mein koi asli offer, dukaan ya rating nahi hai.';
+      if(portal) portal.style.display='';
+      if(offbtn) offbtn.textContent='Offers dekhein (Customer)';
+    }
+    det.style.display='block';
+    det.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+function showAllCategories(){
+  document.querySelectorAll('#cat-grid .card').forEach(function(c){
+    c.style.display='';
+  });
+  document.getElementById('show-all-wrap').style.display='none';
+  document.getElementById('cat-detail').style.display='none';
+  document.getElementById('categories').scrollIntoView({behavior:'smooth'});
+}
+
+function showRole(role){
+  var custIds=['categories','chatbot-sec','customer-view','wholesale-sec'];
+  var shopIds=['shop-portal','shopbox-sec'];
+  var show = (role==='customer') ? custIds : shopIds;
+  var hide = (role==='customer') ? shopIds : custIds;
+  show.forEach(function(id){var el=document.getElementById(id); if(el) el.style.display='block';});
+  hide.forEach(function(id){var el=document.getElementById(id); if(el) el.style.display='none';});
+  document.getElementById('role-label').textContent = (role==='customer') ? 'Customer view — sirf customer wali cheezein' : 'Dukaan view — sirf dukaan wali cheezein';
+  document.getElementById('role-bar').style.display='block';
+}
+function showAllRoles(){
+  ['categories','chatbot-sec','customer-view','wholesale-sec','shop-portal','shopbox-sec'].forEach(function(id){var el=document.getElementById(id); if(el) el.style.display='block';});
+  document.getElementById('role-bar').style.display='none';
+}
+</script>
+<script>
+document.querySelectorAll('#cat-grid .card').forEach(function(c){
+  c.addEventListener('click', function(){ showCategory(c.id); });
+});
+function shopStep(n){
+  [1,2,3,4].forEach(function(i){
+    var el=document.getElementById('shop-step'+i);
+    if(el) el.style.display=(i===n)?'block':'none';
+  });
+  var labels={1:'Step 1/4 — Dukaan ki tafseel',2:'Step 2/4 — Description + Wholesale',3:'Step 3/4 — Pehli Offer',4:'Step 4/4 — Jaiza'};
+  var lab=document.getElementById('shop-step-label');
+  if(lab) lab.textContent=labels[n];
+  document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});
+}
+function custStep(n){
+  [1,2].forEach(function(i){
+    var el=document.getElementById('cust-step'+i);
+    if(el) el.style.display=(i===n)?'block':'none';
+  });
+}
+function followToggle(){
+  var b=document.getElementById('follow-btn');
+  if(b.textContent.indexOf('Following')>=0){ b.textContent='+ Follow karein'; }
+  else { b.textContent='✓ Following'; }
+}
+function shareNote(){
+  document.getElementById('share-note').style.display='block';
+}
+function starSel(n){
+  var stars=document.getElementById('stars').children;
+  for(var i=0;i<stars.length;i++){ stars[i].textContent=(i<n)?'★':'☆'; }
+}
+function botAsk(n){
+  var body=document.getElementById('bot-body');
+  var ans={
+    1:'Demo jawab: Is category ki live offers pehli verified dukaan ke saath yahan nazar aayengi. Asli chatbot launch par dukaan ka naam, offer price aur validity batayega.',
+    2:'Demo jawab: Har dukaan ke timings us ke page par honge. Asli chatbot wahi se batayega — andaza nahi lagayega.',
+    3:'Demo jawab: Jis offer par Wholesale available flag hoga, chatbot wahi batayega + minimum bulk quantity bhi.'
+  };
+  var q=document.getElementById('bot-input').value;
+  var qs=(n===1)?'Katchery mein mobile ki offer?':((n===2)?'Dukaan kab khulti hai?':((n===3)?'Wholesale milega?':(q||'...')));
+  var text;
+  if(n===0){
+    var low=q.toLowerCase();
+    if(low.indexOf('mobile')>=0||low.indexOf('phone')>=0){ text=ans[1]; }
+    else if(low.indexOf('wholesale')>=0){ text=ans[3]; }
+    else if(low.indexOf('khulti')>=0||low.indexOf('timing')>=0||low.indexOf('kab')>=0){ text=ans[2]; }
+    else if(low.indexOf('kapra')>=0||low.indexOf('cloth')>=0){ text='Demo jawab: Kapra category mein suit, shirt, lawn, bed sheets ki offers aayengi — asli chatbot launch par dukaan ka naam + price + validity batayega.'; }
+    else { text='Demo jawab: Aapka sawal — asli chatbot launch par dukaan ke live data se is ka jawab dega. Preview mein sirf sample jawab dikhaye gaye hain.'; }
+  } else { text=ans[n]; }
+  body.innerHTML='<p><b>Aap:</b> '+qs+'</p><p style="margin-top:8px"><b>Chatbot:</b> '+text+'</p>';
+  document.getElementById('bot-input').value='';
+}
+function filterCats(q){
+  var low=q.toLowerCase();
+  document.querySelectorAll('#cat-grid .card').forEach(function(c){
+    var b=c.querySelector('b');
+    var name=b?b.textContent.toLowerCase():'';
+    c.style.display=(low===''||name.indexOf(low)>=0)?'':'none';
+  });
+}
+function goCustomerOffers(){
+  var name=document.getElementById('cd-name').textContent;
+  var note=document.getElementById('cat-context');
+  if(note){ note.textContent=name?name+' ki live offers launch par yahan nazar aayengi.':''; note.style.display='block'; }
+  showRole('customer');
+  document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});
+}
+var AREA_MAP={
+  bazaar:['Aminpur Bazaar','Chiniot Bazaar','Katchery Bazaar','Rail Bazaar','Karkhana Bazaar','Montgomery Bazaar','Jhang Bazaar','Bhawana Bazaar','Gole Bazaar'],
+  sheher:['Madina Town','Jinnah Colony','Gulberg','Millat Town','Ghulam Muhammad Abad','Iqbal Town','Peoples Colony No. 1','Peoples Colony No. 2','D Ground','Samanabad','Model Town','Model City','Civil Lines','Sir Syed Town','Gulistan Colony','Gulbahar Colony','Batala Colony','Abdullahpur','Nishatabad','Mansoorabad','Madan Pura','Manawala','Muslim Town','Sarfraz Colony','Saeed Colony','Islam Nagar','Sant Nagar','Dhobi Ghaat','Dugluspura','Tata Bazaar','Gobind Pura','Eden Gardens','Eden Valley','WAPDA City','FDA City','Citi Housing','Canal View Housing','Sitara Valley','Royal City','Executive Lodges','Gokhowal','Gatwala','Kohinoor City','Sheikh Colony','Tariq Abad','Raza Abad','Eden Executive','Wadi-e-Sitara','Khayaban Colony','Allama Iqbal Colony','Amin Town'],
+  road:['Susan Road','Satiana Road','Jaranwala Road','Samundri Road','Canal Road','Jhang Road','Sargodha Road','Circular Road','Motor Market','Thikriwala','Sheikhupura Road','Narwala Road'],
+  airport:['Airport Area']
+};
+function filterAreas(type){
+  var sel=document.getElementById('shop-area');
+  if(!sel) return;
+  if(!type||!AREA_MAP[type]){ sel.innerHTML='<option value="">Pehle area type chunein</option>'; return; }
+  var html='<option value="">Area chunein</option>';
+  AREA_MAP[type].forEach(function(a){ html+='<option>'+a+'</option>'; });
+  sel.innerHTML=html;
+}
+window.addEventListener('scroll',function(){
+  var h=document.querySelector('header');
+  if(!h) return;
+  if(window.scrollY>140){ h.classList.add('mini'); } else { h.classList.remove('mini'); }
+});
+function toggleLogin(id){
+  var el=document.getElementById(id);
+  el.style.display=(el.style.display==='block')?'none':'block';
+}
+function loginGo(role,dropId){
+  document.getElementById(dropId).style.display='none';
+  showRole(role);
+  document.getElementById(role==='customer'?'customer-view':'shop-portal').scrollIntoView({behavior:'smooth'});
+}
+</script>
+<script>
+var AREA_COORDS={'Aminpur Bazaar':[31.4175,73.076],
+'Chiniot Bazaar':[31.419,73.0805],
+'Katchery Bazaar':[31.4165,73.0815],
+'Rail Bazaar':[31.421,73.0775],
+'Karkhana Bazaar':[31.4185,73.083],
+'Montgomery Bazaar':[31.4155,73.0785],
+'Jhang Bazaar':[31.417,73.0745],
+'Bhawana Bazaar':[31.42,73.0825],
+'Gole Bazaar':[31.418,73.0791],
+'Madina Town':[31.4325,73.112],
+'Jinnah Colony':[31.413,73.073],
+'Gulberg':[31.408,73.1],
+'Millat Town':[31.46,73.065],
+'Ghulam Muhammad Abad':[31.435,73.055],
+'Iqbal Town':[31.438,73.118],
+'Peoples Colony No. 1':[31.427,73.105],
+'Peoples Colony No. 2':[31.43,73.108],
+'D Ground':[31.429,73.1065],
+'Samanabad':[31.425,73.065],
+'Model Town':[31.405,73.088],
+'Model City':[31.402,73.095],
+'Civil Lines':[31.418,73.09],
+'Sir Syed Town':[31.445,73.09],
+'Gulistan Colony':[31.423,73.095],
+'Gulbahar Colony':[31.421,73.098],
+'Batala Colony':[31.415,73.1],
+'Abdullahpur':[31.39,73.095],
+'Nishatabad':[31.47,73.1],
+'Mansoorabad':[31.452,73.115],
+'Madan Pura':[31.408,73.065],
+'Manawala':[31.465,73.085],
+'Muslim Town':[31.448,73.085],
+'Sarfraz Colony':[31.433,73.05],
+'Saeed Colony':[31.42,73.103],
+'Islam Nagar':[31.412,73.085],
+'Sant Nagar':[31.41,73.088],
+'Dhobi Ghaat':[31.424,73.075],
+'Dugluspura':[31.413,73.08],
+'Tata Bazaar':[31.419,73.077],
+'Gobind Pura':[31.417,73.083],
+'Eden Gardens':[31.375,73.06],
+'Eden Valley':[31.365,73.075],
+'WAPDA City':[31.383,73.115],
+'FDA City':[31.35,73.09],
+'Citi Housing':[31.46,73.14],
+'Canal View Housing':[31.41,73.115],
+'Sitara Valley':[31.395,73.105],
+'Royal City':[31.44,73.095],
+'Executive Lodges':[31.37,73.062],
+'Gokhowal':[31.475,73.06],
+'Gatwala':[31.47,73.15],
+'Kohinoor City':[31.425,73.113],
+'Sheikh Colony':[31.438,73.052],
+'Tariq Abad':[31.43,73.058],
+'Raza Abad':[31.428,73.048],
+'Eden Executive':[31.368,73.055],
+'Wadi-e-Sitara':[31.385,73.07],
+'Khayaban Colony':[31.44,73.045],
+'Allama Iqbal Colony':[31.445,73.125],
+'Amin Town':[31.405,73.12],
+'Susan Road':[31.415,73.095],
+'Satiana Road':[31.395,73.075],
+'Jaranwala Road':[31.42,73.12],
+'Samundri Road':[31.405,73.125],
+'Canal Road':[31.408,73.108],
+'Jhang Road':[31.43,73.04],
+'Sargodha Road':[31.45,73.11],
+'Circular Road':[31.419,73.082],
+'Motor Market':[31.435,73.03],
+'Thikriwala':[31.375,72.985],
+'Sheikhupura Road':[31.46,73.095],
+'Narwala Road':[31.425,73.07],
+'Airport Area':[31.4882,73.0996]};
+function haversineKm(lat1,lon1,lat2,lon2){
+  var R=6371, dLat=(lat2-lat1)*Math.PI/180, dLon=(lon2-lon1)*Math.PI/180;
+  var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+function nearMe(){
+  var note=document.getElementById('nearme-note');
+  var list=document.getElementById('nearme-list');
+  note.style.display='block';
+  if(!navigator.geolocation){ note.textContent='Is device/browser mein GPS maujood nahi.'; return; }
+  note.textContent='Location li ja rahi hai...';
+  navigator.geolocation.getCurrentPosition(function(pos){
+    var la=pos.coords.latitude, lo=pos.coords.longitude;
+    var rows=[];
+    for(var name in AREA_COORDS){ var c=AREA_COORDS[name]; rows.push([name,haversineKm(la,lo,c[0],c[1])]); }
+    rows.sort(function(x,y){return x[1]-y[1];});
+    list.innerHTML=rows.slice(0,5).map(function(r){return '<li><b>'+r[0]+'</b> — ~'+r[1].toFixed(1)+' km</li>';}).join('');
+    note.textContent='Aap ke sab se qareebi 5 areas:';
+    var kb=AREA_COORDS['Katchery Bazaar'];
+    var dd=document.getElementById('demo-dist');
+    if(kb&&dd){ dd.textContent='• Aap se faasla: ~'+haversineKm(la,lo,kb[0],kb[1]).toFixed(1)+' km'; }
+  },function(){ note.textContent='Location ki ijazat nahi mili — browser mein location Allow karein.'; });
+}
+</script>
+</body>
+</html>
