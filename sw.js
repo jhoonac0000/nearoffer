@@ -1,0 +1,63 @@
+/* NearOffer service worker — minimal static cache (preview PWA).
+   Pages: network first, cache fallback. Static files: cache first. */
+var CACHE = "nearoffer-v1";
+var CORE = [
+  "/",
+  "/index.html",
+  "/articles/",
+  "/articles/index.html",
+  "/articles/wedding-halls-in-faisalabad-booking-guide.html",
+  "/articles/images/faisalabad-wedding-hall-walima-stage.jpg",
+  "/articles/images/faisalabad-marquee-lawn-evening.jpg",
+  "/articles/images/wedding-buffet-catering-setup.jpg",
+  "/manifest.webmanifest",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/icons/apple-touch-icon.png"
+];
+
+self.addEventListener("install", function (event) {
+  event.waitUntil(
+    caches.open(CACHE).then(function (cache) {
+      return cache.addAll(CORE);
+    }).then(function () { return self.skipWaiting(); })
+  );
+});
+
+self.addEventListener("activate", function (event) {
+  event.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(keys.map(function (k) {
+        return k === CACHE ? null : caches.delete(k);
+      }));
+    }).then(function () { return self.clients.claim(); })
+  );
+});
+
+self.addEventListener("fetch", function (event) {
+  var req = event.request;
+  if (req.method !== "GET" || new URL(req.url).origin !== self.location.origin) return;
+  if (req.mode === "navigate") {
+    event.respondWith(
+      fetch(req).then(function (res) {
+        var copy = res.clone();
+        caches.open(CACHE).then(function (cache) { cache.put(req, copy); });
+        return res;
+      }).catch(function () {
+        return caches.match(req).then(function (hit) {
+          return hit || caches.match("/index.html");
+        });
+      })
+    );
+    return;
+  }
+  event.respondWith(
+    caches.match(req).then(function (hit) {
+      return hit || fetch(req).then(function (res) {
+        var copy = res.clone();
+        caches.open(CACHE).then(function (cache) { cache.put(req, copy); });
+        return res;
+      });
+    })
+  );
+});

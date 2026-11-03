@@ -56,7 +56,7 @@
   .chatbox .chead{background:#0d5c46;color:#fff;padding:11px 16px;font-weight:700}
   .chatbox .cbody{padding:16px;background:#faf8f3;min-height:90px}
   .chatbox .cfoot{display:flex;gap:8px;padding:12px;background:#fff;border-top:1px solid #e5e0d5}
-  .chatbox .cfoot input{flex:1;padding:11px;border:1px solid #ccc;border-radius:8px;font-size:15px}
+  .chatbox .cfoot input{flex:1;min-width:0;padding:11px;border:1px solid #ccc;border-radius:8px;font-size:15px}
   .chatbox .cfoot button{background:#0d5c46;color:#fff;border:0;border-radius:8px;padding:11px 18px;font-weight:700;cursor:pointer}
   .areachips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
   .areachips span{background:#fff;border:1px solid #e5e0d5;padding:6px 12px;border-radius:20px;font-size:13px}
@@ -69,6 +69,7 @@
   footer{background:#222;color:#bbb;text-align:center;padding:22px 0;font-size:14px}
   footer a{color:#ffb703;text-decoration:none}
   @media(max-width:600px){.hero{padding:28px 0 24px}.hero h1{font-size:28px}.hero p{font-size:16px}header.mini .top{display:none}header.mini{padding-top:4px}}
+  @media(max-width:600px){nav a{display:inline-block;padding:9px 4px}footer a{display:inline-block;padding:8px 4px}}
   #cat-grid .card{cursor:pointer;text-align:center;padding:22px 10px}
   #cat-grid .card b{font-size:17px}
   #cat-grid .card p,#cat-grid .card .links{display:none}
@@ -132,8 +133,28 @@
   .faq-item{background:#fff;border:1px solid #e5e0d5;border-radius:12px;padding:16px;margin-bottom:10px}
   .faq-item h3{font-size:18px;color:#0d5c46;margin-bottom:5px}
   .faq-item p{color:#444}
+  /* Responsive hardening — 3 Nov 2026 check */
+  img{max-width:100%}
+  body{overflow-wrap:break-word}
+  @media(max-width:600px){
+    header .top{flex-wrap:wrap;row-gap:8px}
+    .city-badge{font-size:12px}
+    .lvl-row{flex-wrap:wrap}
+    .lvl-row b{min-width:110px}
+    .portal{padding:18px 14px}
+    .wholesale{padding:18px 14px}
+  }
 </style>
 <link rel="canonical" href="https://nearoffer.pages.dev/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d5c46">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="NearOffer">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 <meta property="og:title" content="NearOffer — Faisalabad Offers, Wedding Halls, Local Shops">
 <meta property="og:description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus masjid details and practical city guides.">
 <meta property="og:type" content="website">
@@ -533,6 +554,25 @@
         <p class="note" id="form-note" style="display:none">Preview version: ye form ka design hai. Asli registration full platform launch par live hogi — tab har request seedha team tak jayegi, team verify karke (WhatsApp/phone OTP + dukaan photo/address match) activate karegi aur dukaan ko apna page/link + QR milega.</p>
         </div>
       </form>
+      <div class="infobox" id="visitor-panel">
+        <h3>📊 Meri Dukaan ke Visitors</h3>
+        <p>Apni category chunein aur dekhein ke us category ko kitne customers ne khola — <b>aaj ke visitors</b> aur <b>kul visitors</b> dono. Jab bhi koi customer aapki category kholta hai, wo visit yahin count ho jati hai. Is se dukaan walon ko saaf andaza hota hai ke customers kis category mein sab se zyada dilchaspi le rahe hain — apni offer hamesha fresh rakhein, taake har visit aapke liye ek mauqa bane.</p>
+        <label for="vp-cat" style="display:block;font-weight:600;margin:12px 0 4px;font-size:14px">Apni dukaan ki category chunein</label>
+        <select id="vp-cat" onchange="renderVisitorPanel()" style="width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;font-size:15px"></select>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <div style="flex:1;min-width:140px;background:#fff;border:1px solid #bcd8c8;border-radius:12px;padding:12px;text-align:center">
+            <div style="font-size:13px;font-weight:700;color:#555">Aaj ke visitors</div>
+            <div id="vp-today" style="font-size:30px;font-weight:800;color:#0d5c46">0</div>
+          </div>
+          <div style="flex:1;min-width:140px;background:#fff;border:1px solid #bcd8c8;border-radius:12px;padding:12px;text-align:center">
+            <div style="font-size:13px;font-weight:700;color:#555">Kul visitors (total)</div>
+            <div id="vp-total" style="font-size:30px;font-weight:800;color:#0d5c46">0</div>
+          </div>
+        </div>
+        <p style="font-weight:700;color:#0d5c46;margin-top:14px">Pichle 7 din</p>
+        <div id="vp-days"></div>
+        <p class="note">Preview counting: ye ginti abhi sirf isi device (isi phone/browser) par banti hai — jo visit isi device par category khulne se ho, sirf wahi count hoti hai, aur shuru mein ye 0 hi hogi. Live accounts aane par har dukaan ka asal count server par alag juda hoga, aur wahi final count hoga.</p>
+      </div>
       <div class="infobox">
         <h3>Offer upload — portal se (launch par)</h3>
         <ol>
@@ -678,7 +718,7 @@
   <div class="wrap">
     <p><b style="color:#fff">NearOffer</b> — Faisalabad se shuru, Pakistan → duniya.</p>
     <nav style="margin:10px 0"><a href="articles/index.html">Articles</a> • <a href="#categories">Categories</a> • <a href="#shop-portal">Dukaan Portal</a> • <a href="#leaderboard-sec">Leaderboard</a></nav>
-    <p>General rabta (WhatsApp): <a href="https://wa.me/923337476228">+92 333 7476228</a> • Sirf physical dukaanen • Koi online seller nahi • Ranking kabhi bikau nahi</p>
+    <p>General rabta: <a href="https://wa.me/923337476228">WhatsApp par message karein</a> • Sirf physical dukaanen • Koi online seller nahi • Ranking kabhi bikau nahi</p>
   </div>
 </footer>
 <script>
@@ -942,6 +982,91 @@ function nearMe(){
     var dd=document.getElementById('demo-dist');
     if(kb&&dd){ dd.textContent='• Aap se faasla: ~'+haversineKm(la,lo,kb[0],kb[1]).toFixed(1)+' km'; }
   },function(){ note.textContent='Location ki ijazat nahi mili — browser mein location Allow karein.'; });
+}
+</script>
+<script>
+/* Visitor counting — preview (isi device par, localStorage).
+   Har category khulne par us category ki visit count hoti hai:
+   per category {total, days:{"YYYY-MM-DD": n}} */
+var VP_KEY='nearoffer-visitors-v1';
+var VP_CAT_KEY='nearoffer-visitors-cat';
+function vpTodayKey(d){
+  d=d||new Date();
+  var m=('0'+(d.getMonth()+1)).slice(-2), day=('0'+d.getDate()).slice(-2);
+  return d.getFullYear()+'-'+m+'-'+day;
+}
+function vpLoad(){
+  try{ return JSON.parse(localStorage.getItem(VP_KEY))||{}; }catch(e){ return {}; }
+}
+function vpSave(store){
+  try{ localStorage.setItem(VP_KEY, JSON.stringify(store)); }catch(e){}
+}
+function vpRecordVisit(catId){
+  if(!catId) return;
+  var store=vpLoad();
+  var entry=store[catId]||{total:0,days:{}};
+  entry.total=(entry.total||0)+1;
+  var k=vpTodayKey();
+  entry.days[k]=(entry.days[k]||0)+1;
+  store[catId]=entry;
+  vpSave(store);
+  try{ localStorage.setItem(VP_CAT_KEY, catId); }catch(e){}
+  var sel=document.getElementById('vp-cat');
+  if(sel && sel.value===catId){ renderVisitorPanel(); }
+}
+var vpOrigShowCategory=showCategory;
+showCategory=function(id){
+  vpRecordVisit(id);
+  vpOrigShowCategory(id);
+};
+function vpDayLabel(key){
+  var parts=key.split('-');
+  var d=new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+  return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+}
+function renderVisitorPanel(){
+  var sel=document.getElementById('vp-cat');
+  if(!sel) return;
+  var catId=sel.value;
+  try{ localStorage.setItem(VP_CAT_KEY, catId); }catch(e){}
+  var store=vpLoad();
+  var entry=store[catId]||{total:0,days:{}};
+  var days=entry.days||{};
+  document.getElementById('vp-today').textContent=days[vpTodayKey()]||0;
+  document.getElementById('vp-total').textContent=entry.total||0;
+  var rows='';
+  for(var i=0;i<7;i++){
+    var d=new Date(); d.setDate(d.getDate()-i);
+    var k=vpTodayKey(d);
+    var n=days[k]||0;
+    rows+='<div class="lvl-row" style="margin-bottom:6px"><b>'+vpDayLabel(k)+(i===0?' (aaj)':'')+'</b><div>'+n+' visitor'+(n===1?'':'s')+'</div></div>';
+  }
+  document.getElementById('vp-days').innerHTML=rows;
+}
+(function(){
+  var sel=document.getElementById('vp-cat');
+  if(!sel) return;
+  var savedCat=null;
+  try{ savedCat=localStorage.getItem(VP_CAT_KEY); }catch(e){}
+  var firstId=null, hasSaved=false;
+  document.querySelectorAll('#cat-grid .card').forEach(function(c){
+    var b=c.querySelector('b');
+    var opt=document.createElement('option');
+    opt.value=c.id;
+    opt.textContent=b?b.textContent:c.id;
+    sel.appendChild(opt);
+    if(!firstId) firstId=c.id;
+    if(savedCat && c.id===savedCat) hasSaved=true;
+  });
+  sel.value=hasSaved?savedCat:(firstId||'');
+  renderVisitorPanel();
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  });
 }
 </script>
 </body>
