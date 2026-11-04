@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NearOffer — Faisalabad Offers, Wedding Halls, Local Shops</title>
-<meta name="description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus masjid details and practical city guides.">
+<meta name="description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus a nearby masjid finder and practical city guides.">
 <meta name="keywords" content="Faisalabad offers, Faisalabad dukaan offers, kapra wholesale Faisalabad, motor market Faisalabad, mobile price Faisalabad, electronics offers Faisalabad, shoes wholesale Faisalabad, furniture sale Faisalabad, grocery offers Faisalabad, medical wholesale Faisalabad, verified dukaan, wholesale market Faisalabad, near offers, dukan offers, Faisalabad shopping offers, Ghanta Ghar bazaar offers, Katchery bazaar offers, wedding halls Faisalabad, marquee booking Faisalabad, masjids in Faisalabad, Faisalabad areas">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -156,14 +156,14 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 <meta property="og:title" content="NearOffer — Faisalabad Offers, Wedding Halls, Local Shops">
-<meta property="og:description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus masjid details and practical city guides.">
+<meta property="og:description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus a nearby masjid finder and practical city guides.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nearoffer.pages.dev/">
 <meta property="og:image" content="https://nearoffer.pages.dev/articles/images/faisalabad-wedding-hall-walima-stage.jpg">
 <meta property="og:image:alt" content="Wedding hall in Faisalabad decorated with a floral stage for a walima reception">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NearOffer — Faisalabad Offers, Wedding Halls, Local Shops">
-<meta name="twitter:description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus masjid details and practical city guides.">
+<meta name="twitter:description" content="Discover NearOffer, a preview-stage Faisalabad platform for local offers from physical shops and wedding venues, plus a nearby masjid finder and practical city guides.">
 <meta name="twitter:image" content="https://nearoffer.pages.dev/articles/images/faisalabad-wedding-hall-walima-stage.jpg">
 <meta name="twitter:image:alt" content="Wedding hall in Faisalabad decorated with a floral stage for a walima reception">
 <script type="application/ld+json">
@@ -300,7 +300,7 @@
 <section id="faq-sec">
   <div class="wrap">
     <h2>What is NearOffer?</h2>
-    <p class="direct-answer">NearOffer is a preview-stage local discovery platform for Faisalabad, Pakistan. It brings together offers from physical shops, booking information for wedding halls and marquees, discovery details for masjids, and practical local guides across 25 categories. Customers use NearOffer to discover a place, review its published offer or information, and then visit or contact the business directly. NearOffer does not process payments or provide delivery through the platform.</p>
+    <p class="direct-answer">NearOffer is a preview-stage local discovery platform for Faisalabad, Pakistan. It brings together offers from physical shops, booking information for wedding halls and marquees, a nearby masjid finder powered by Google Maps, and practical local guides across 24 categories. Customers use NearOffer to discover a place, review its published offer or information, and then visit or contact the business directly. NearOffer does not process payments or provide delivery through the platform.</p>
     <div style="margin-top:24px">
       <div class="faq-item">
         <h3>What is NearOffer?</h3>
@@ -344,6 +344,20 @@
       </div>
       <p class="note" style="padding:0 12px 12px">Preview demo: asli chatbot full platform par live hoga — jawab sirf dukaan ke diye hue data se hoga, andaza nahi lagayega. Jo pata na ho to chatbot dukaan ka WhatsApp number de dega.</p>
     </div>
+  </div>
+</section>
+
+
+<section id="masjid-finder" style="background:#e8f3ee">
+  <div class="wrap">
+    <h2>🕌 Qareebi Masjid — Nearby Masjid Finder</h2>
+    <p class="sub">Aap jahan bhi hon — bazaar, safar ya kisi bilkul naye area mein — aap ke sab se qareeb ki masjid, wahan tak ka faasla (distance) aur poora rasta Google Maps khud dikha dega.</p>
+    <p>Is ke liye na kisi masjid ko yahan listing karni hai, na kisi se poochna hai — Google ke paas masjidoon ki location pehle se maujood hai; ye button bas aap ki apni location se sab se qareebi masjidein dhoond kar de deta hai.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
+      <span class="fchip">1 — Button dabayein</span><span class="fchip">2 — Location ki ijazat dein</span><span class="fchip">3 — Qareebi masjid + rasta dekhein</span>
+    </div>
+    <button type="button" onclick="findMasjid()" style="background:#0d5c46;color:#fff;border:0;border-radius:24px;padding:13px 22px;font-weight:800;font-size:16px;cursor:pointer">🕌 Meri Qareebi Masjid Dhoondein</button>
+    <p class="note" id="masjid-note" style="margin-top:10px">Location on karne se Google Maps aap ke gird ki masjidein distance ke saath dikhayega — kisi masjid par tap karke seedha rasta (directions) bhi mil jayega.</p>
   </div>
 </section>
 
@@ -411,7 +425,6 @@
       <div class="card" id="cat-medical"><b>💊 Medical</b><p>Dawaaiyan aur medical ka saamaan — wholesale rate, companies aur wholesalers bhi.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
       <div class="card" id="cat-laptop"><b>💻 Laptop &amp; Accessories</b><p>Laptop, charger, bag, mouse — laptop ki har cheez, asli price par.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
       <div class="card" id="cat-wedding"><b>🏛️ Wedding Halls &amp; Marquees</b><p>Shaadi hall aur marquees — nikah, baraat aur walima ke packages aur booking offers.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
-      <div class="card" id="cat-masjid"><b>🕌 Masjids</b><p>Masajid ki location aur namaz se mutaliq maloomat — discovery point, yahan offers nahi lagte.</p><div class="links"><a class="view" href="#customer-view" onclick="showRole('customer');document.getElementById('customer-view').scrollIntoView({behavior:'smooth'});return false;">Offers dekhein</a><a class="shop" href="#shop-portal" onclick="showRole('shop');document.getElementById('shop-portal').scrollIntoView({behavior:'smooth'});return false;">Dukaan portal</a></div></div>
     </div>
   </div>
 </section>
@@ -485,7 +498,7 @@
           <option>Home Items</option><option>Furniture</option><option>Shoes</option><option>Jewellery</option>
           <option>Grocery / Kirana</option><option>Books &amp; Stationery</option><option>Education</option>
           <option>Salon &amp; Beauty</option><option>Sports &amp; Fitness</option><option>Toys &amp; Gifts</option>
-          <option>Crockery</option><option>Services</option><option>Hosiery (Garments)</option><option>Medical</option><option>Laptop &amp; Accessories</option><option>Wedding Halls &amp; Marquees</option><option>Masjids (sirf location / maloomat — offer nahi)</option>
+          <option>Crockery</option><option>Services</option><option>Hosiery (Garments)</option><option>Medical</option><option>Laptop &amp; Accessories</option><option>Wedding Halls &amp; Marquees</option>
         </select>
         <label>Area type chunein</label>
         <select id="area-type" onchange="filterAreas(this.value)" required>
@@ -735,6 +748,20 @@ function setGPS(){
 }
 </script>
 <script>
+function findMasjid(){
+  var note=document.getElementById('masjid-note');
+  if(navigator.geolocation){
+    if(note) note.textContent='Location li ja rahi hai... Google Maps khul raha hai.';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      window.open('https://www.google.com/maps/search/masjid/@'+pos.coords.latitude+','+pos.coords.longitude+',16z','_blank');
+    },function(){
+      if(note) note.textContent='Location ki ijazat nahi mili — Google Maps khul raha hai; wahan Maps aap ki location se qareebi masjidein dikha dega.';
+      window.open('https://www.google.com/maps/search/masjid+near+me','_blank');
+    },{timeout:10000});
+  } else {
+    window.open('https://www.google.com/maps/search/masjid+near+me','_blank');
+  }
+}
 function showCategory(id){
   showAllRoles();
   var cards=document.querySelectorAll('#cat-grid .card');
@@ -752,15 +779,9 @@ function showCategory(id){
     var note=document.getElementById('cd-note');
     var portal=document.getElementById('cd-portal');
     var offbtn=det.querySelector('.btn-green');
-    if(id==='cat-masjid'){
-      if(note) note.textContent='Masjids par offers nahi hote — yahan sirf masjid ki location, jamaat/namaz ke auqaat aur sahulat (wuzu, parking) ki maloomat nazar aayengi. Ye sirf discovery point hai.';
-      if(portal) portal.style.display='none';
-      if(offbtn) offbtn.textContent='Masjid ki maloomat dekhein';
-    } else {
-      if(note) note.textContent='Is category ki live offers pehli verified dukaan ke saath yahan nazar aayengi. Preview mein koi asli offer, dukaan ya rating nahi hai.';
-      if(portal) portal.style.display='';
-      if(offbtn) offbtn.textContent='Offers dekhein (Customer)';
-    }
+    if(note) note.textContent='Is category ki live offers pehli verified dukaan ke saath yahan nazar aayengi. Preview mein koi asli offer, dukaan ya rating nahi hai.';
+    if(portal) portal.style.display='';
+    if(offbtn) offbtn.textContent='Offers dekhein (Customer)';
     det.style.display='block';
     det.scrollIntoView({behavior:'smooth',block:'start'});
   }
