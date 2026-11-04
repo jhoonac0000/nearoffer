@@ -1,13 +1,13 @@
 # NearOffer
 
-NearOffer is a preview-stage local discovery platform for Faisalabad, Pakistan. It covers physical shops, venues and places across 24 categories, including local offers and wedding halls and marquees, plus a separate nearby masjid finder powered by Google Maps.
+NearOffer is a local discovery platform for Faisalabad, Pakistan. It covers physical shops, venues and places across 24 categories, including local offers and wedding halls and marquees, plus a separate nearby masjid finder powered by Google Maps.
 
 ## How NearOffer works
 
 - Customers browse categories and Faisalabad areas, review a published offer or place information, and then visit or contact the business directly.
 - NearOffer does not process payments or provide delivery through the platform.
 - Shops join through the Dukaan Portal registration form. The NearOffer team reviews submissions, and verification is based on phone or WhatsApp confirmation plus a matching shop photo and address.
-- NearOffer ranking is never sold. Ranking is based on followers, genuine visits, ratings and new offers, while sponsored placements are labelled separately.
+- NearOffer ranking is never sold. Ranking is based on followers, genuine visits, ratings and new offers.
 
 ## Main pages
 
